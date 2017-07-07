@@ -1,0 +1,6 @@
+Revmove github repository.
+- http://codedragon.tistory.com/967
+
+git push
+$ git push -u orign mastery
+
