@@ -9,22 +9,30 @@ public class homework {
 	static int T;
 	static int answer;
 	static int data[][];
-	static ArrayList<LineData> lineData;
+	static ArrayList<LineData> lineData = new ArrayList<LineData>();
+	static ArrayList<Integer> distance = new ArrayList<Integer>();
+	static ArrayList<Integer> selected = new ArrayList<Integer>();
 
 	public static void main(String[] args) throws FileNotFoundException {
-		String file_path = "D:\\work\\gits\\gitHub\\doomsday\\Pro_study\\Solution\\Pro_study\\res\\first_week_homework.txt";
+		String file_path = 
+				//"D:\\work\\gits\\gitHub\\doomsday\\Pro_study\\Solution\\Pro_study\\res\\first_week_homework.txt";
+				"F:\\study\\gitHub\\doomsday\\Pro_study\\Solution\\Pro_study\\res\\first_week_homework.txt";
 		System.setIn(new FileInputStream(file_path));
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		int N = 0;
 
 		for (int test_case = 1; test_case <= T; test_case++) {
+			// init
 			answer = 0;
+			
+			lineData.clear();
+			distance.clear();
+			selected.clear();
+			
 			int target = sc.nextInt();
 			int max = 777;
 			N = sc.nextInt();
-
-			lineData = new ArrayList<LineData>();
 
 			for (int i = 0; i < N; i++) {
 				int start = sc.nextInt();
@@ -46,6 +54,8 @@ public class homework {
 			
 			//algorithm
 
+			dkt(1);
+			
 			System.out.println("#" + test_case + " " + answer);
 		}
 
@@ -55,9 +65,10 @@ public class homework {
 		}
 	}
 
-//	public static void dkt(int x,int data[][],  ){
-//		
-//	}
+	public static void dkt(int x){
+		
+		
+	}
 
 	public static void resetArrary(int x, int y, int resetValue) {
 		for (int i = 0; i < x; i++) {
