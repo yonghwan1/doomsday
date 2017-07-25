@@ -12,6 +12,7 @@ public class homework {
 	static ArrayList<LineData> lineData = new ArrayList<LineData>();
 	static ArrayList<Integer> distance = new ArrayList<Integer>();
 	static ArrayList<Integer> selected = new ArrayList<Integer>();
+	static int MAX = 999;
 
 	public static void main(String[] args) throws FileNotFoundException {
 		String file_path = 
@@ -31,22 +32,19 @@ public class homework {
 			selected.clear();
 			
 			int target = sc.nextInt();
-			int max = 777;
 			N = sc.nextInt();
 
 			for (int i = 0; i < N; i++) {
 				int start = sc.nextInt();
 				int end = sc.nextInt();
 				int value = sc.nextInt();
-				if (max < value) {
-					max = value;
-				}
+				
 				LineData point = new LineData(start, end, value);
 				lineData.add(point);
 			}
 
 			data = new int[target][target];
-			resetArrary(target, target, max);
+			resetArrary(target, target, MAX);
 
 			System.out.println("target : " + target);
 			setArraryFromLineData();
@@ -54,7 +52,7 @@ public class homework {
 			
 			//algorithm
 
-			dkt(1);
+			dkt(1, target);
 			
 			System.out.println("#" + test_case + " " + answer);
 		}
@@ -65,8 +63,20 @@ public class homework {
 		}
 	}
 
-	public static void dkt(int x){
+	public static void dkt(int x, int size){
+		selected.add(x);
+		int target;
 		
+		for (int i=0; i<size;i++){
+			target = data[x-1][i];
+			if ((target > 0)&&(target < MAX)){
+				distance.add(target);
+			}
+		}
+		
+		while u not equal v
+			d[w] 
+		    u <- 
 		
 	}
 
