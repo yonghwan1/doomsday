@@ -1,4 +1,4 @@
-package first_week;
+package week.first;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

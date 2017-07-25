@@ -1,11 +1,11 @@
-package first_week;
+package week.first;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import first_week.SearchLoad.Point;
+import week.first.SearchLoad.Point;
 
 public class children {
 
