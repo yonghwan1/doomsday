@@ -9,35 +9,40 @@ public class tsp {
 
 	static int T;
 	static int answer;
-	static int[][] data;
+//	static int[][] data;
 	static int N;
 	static int MAX = 999999;
+	static Point company, home;
 	static ArrayList<Point> arr = new ArrayList<Point>();
 
 	public static void main(String[] args) throws FileNotFoundException {
-		String path = "C:\\Users\\student\\doomgary\\Pro_study\\Solution\\Pro_study\\src\\second_week\\test_input.txt";
+		String path = 
+//				"C:\\Users\\student\\doomgary\\Pro_study\\Solution\\Pro_study\\src\\second_week\\test_input.txt";
+				"D:\\work\\gits\\gitHub\\doomsday\\Pro_study\\Solution\\Pro_study\\src\\week\\second\\tsp\\test_input.txt";
+		
 		System.setIn(new FileInputStream(path));
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
 		N = 0;
 
 		for (int test_case = 1; test_case <= T; test_case++) {
-			answer = 0;
+			answer = 999999;
 			N = sc.nextInt();
-			data = new int[N][N];
+			arr.clear();
+//			data = new int[N][N];			
 			
-			for(int i=0;i<N;i++){
-				for (int j=0;j<N;j++){
-					if(i==j){
-						data[i][j] =0;
-						continue;
-					}
-					data[i][j] = MAX;
-				}
-			}
+//			for(int i=0;i<N;i++){
+//				for (int j=0;j<N;j++){
+//					if(i==j){
+//						data[i][j] =0;
+//						continue;
+//					}
+//					data[i][j] = MAX;
+//				}
+//			}
 						
-			Point company = new Point(sc.nextInt(),sc.nextInt());
-			Point home = new Point(sc.nextInt(),sc.nextInt());
+			company = new Point(sc.nextInt(),sc.nextInt());
+			home = new Point(sc.nextInt(),sc.nextInt());
 			
 
 			for (int i = 0; i < N; i++) {
@@ -55,13 +60,13 @@ public class tsp {
 //			printArrary();
 			perm(0,N);
 			
-			for (int i=0;i<N;i++){
-				for(int j=0;j<N;j++){
-					data[i][j] = getDistance(arr.get(i),arr.get(j));
-				}
-			}
-			
-			printArrary();
+//			for (int i=0;i<N;i++){
+//				for(int j=0;j<N;j++){
+//					data[i][j] = getDistance(arr.get(i),arr.get(j));
+//				}
+//			}
+//			
+//			printArrary();
 			
 			System.out.println("#" + test_case + " " + answer);
 		}
@@ -74,28 +79,40 @@ public class tsp {
 	
 	static void perm(int k, int n){
 		if(k==n){
-			for(int i=0;i<arr.size();i++){
-				arr.get(i).print();
+			int sum = 0;
+			for(int i=1;i<arr.size();i++){
+				sum +=getDistance(arr.get(i-1),arr.get(i));
+//				arr.get(i).print();
 			}
-			System.out.println();
+			// home
+			sum += getDistance(company,arr.get(0));
+			// company
+			sum += getDistance(home,arr.get(arr.size()-1));
+			
+			if (sum < answer){
+				answer = sum;
+			}
+//			System.out.print("sum : "+sum);
+//			System.out.println();
+			
 			return;
 		}
 
 		for(int i=k;i<n;i++){
-			swipe(k,i);
+			swip(k,i);
 			perm(k+1,n);
-			swipe(k,i);
+			swip(k,i);
 		}
 	}
 
-	public static void printArrary() {
-		for (int i = 0; i < N; i++) {
-			for (int j = 0; j < N; j++) {
-				System.out.print(data[i][j]+ " ");
-			}
-			System.out.println();
-		}
-	}
+//	public static void printArrary() {
+//		for (int i = 0; i < N; i++) {
+//			for (int j = 0; j < N; j++) {
+//				System.out.print(data[i][j]+ " ");
+//			}
+//			System.out.println();
+//		}
+//	}
 	
 	public static class Point{
 		int x, y;
@@ -125,7 +142,7 @@ public class tsp {
 	}
 
 
-	public static void swipe(int i, int j){
+	public static void swip(int i, int j){
 		int x = arr.get(i).x;
 		int y = arr.get(i).y;
 		
