@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "MemoforMe",
+  "version": "1.0",
+  "description": "memo!!",
+
+  "browser_action": {
+    "default_icon": "icon/icon16.png",
+    "default_popup": "html/popup.html",
+    "default_title": "I remember"
+  },
+  "icons": {
+      "128": "icon/icon128.png",
+      "16": "icon/icon16.png",
+      "32": "icon/icon32.png",
+      "64": "icon/icon64.png"
+   },
+  "permissions": [ "activeTab", "storage" ]
+}

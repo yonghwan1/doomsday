@@ -1,0 +1,78 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<title>memo</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="../boo/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="../boo/css/bootstrap-theme.min.css">
+
+<script src="../js/jquery-2.0.3.min.js"></script>
+<script src="../js/grt.edit.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="../boo/js/bootstrap.min.js"></script>
+<style type="text/css">
+#tabmenus a.btn {
+	margin:2px;
+}
+</style>
+</head>
+<body style="min-width:620px;">
+<div class="container" >
+<div style="padding:8px 4px 0px 0px;margin-bottom:8px;" >
+  <div id="tablist">
+	  <div style="width:500px;float:left;">
+		  <div id="tabmenus" style="float:left;">
+		  </div>
+	  </div>
+	  <div style="float:right;margin-top:2px;">
+		  <a class="btn btn-success" style="width:40px;margin-right:2px;" id="tab-add">+</a>
+		  <a class="btn btn-danger" style="width:40px;" id="tab-delete-check">-</a>
+	  </div>
+  </div>
+<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<div id="delete-message" style="margin-top:10px;height:80px;display:none;"><span style="color:#f00;font-weight:bold;">表示中のデータを削除します。削除後データを戻すことはできません。<br>
+	Do you delete this data ? You can NOT restore the data.</span><br>
+		  <a class="btn btn-danger" id="tab-delete">DELETE 削除</a>
+		  <a class="btn btn-info" id="tab-delete-cancel">CANCEL キャンセル</a>
+</div>
+<textarea id="memo" style="width:604px;height:300px;border:1px solid #999;padding:8px;">
+</textarea>
+<br>
+<div style="margin-top:4px;">
+<a  id="add_time" class="btn btn-info">TIME</a>
+<a  id="add_url" class="btn btn-info">URL</a>
+<span id="save-message" style="font-size:80%;display:none;"></span>
+</div>
+<div id="links" style="margin-top:4px;margin-bottom:4px;"></div>
+<div>
+	<div style="float:left; padding-right:10px;">
+		<form action="mailto:" target="mail" id="mail_send">
+			<input type="hidden" name="subject" id="mail_title" value="Email subject">
+			<input type="hidden" name="body" id="mail_body" value="Email body">
+			<button id="to_gmail" class="btn btn-default">mail</button>
+		</form>
+	</div>
+	<div style="float:left">
+		<a  id="to_twitter" class="btn btn-default">twitter</a>
+		<small>メモ内容をgmail, twitterへ送ります。 this data send to mail , twitter</small><br>
+	</div>
+	<div class="clearfix"></div>
+</div> <div>
+<small>
+ * テキストエリアの内容を随時自動保存しています。<br>
+ * データを保証する物ではありませんので、重要なデータ・文章は別で利用してください。
+</small>
+</div> <div style="margin-top:4px;">
+<small>
+[無料のchrome 拡張]
+<a href="https://chrome.google.com/webstore/detail/aucru-auction-tool/bmapghmphmadnhhpfjmppcjpnbdpleig" target="_blank">オークション一括検索</a> : ヤフオク 楽オク メルカリ 簡単一括検索!!!<br>
+Web : <a href="http://aucru.com" target="_blank">オークション落札相場検索</a> <br>
+</small>
+</div>
+</div>
+</body></html>
