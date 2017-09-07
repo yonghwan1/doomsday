@@ -3,113 +3,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Memo for me</title>
-    <!-- 
-    <style>
-      body {
-        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
-        font-size: 100%;
-      }
-      #status {
-        /* avoid an excessively wide status text */
-        white-space: pre;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        max-width: 400px;
-      }
-    </style>
-
     <script src="../js/popup.js"></script>
-    -->
-    <style type="text/css">
-      .container {
-        min-width: 600px;
-        max-width: 630px;
-        background: white;
-        // border: 1px solid black;
-      }
-      .menu_container, .tab_container, .button_cotainer{
-        height: 50px;
-        text-align: center;
-        vertical-align: middle;
-      }
-      .menu_container {
-        min-width: 600px;
-        // background: yellow;
-      }
-      .tab_container{
-        min-width: 450px;
-        float: left;
-        text-align: left;
-        // background: black;
-        margin-left: 10px;
-        vertical-align: middle;
-      }
-      .button_cotainer {
-        float: right;
-        min-width: 120px;
-        // background: blue;
-      }
-
-      .plus_button {
-        background: green;
-      }
-
-      .minus_button {
-        background: red;
-      }
-
-      .button {
-        display: inline-block;
-        padding: 6px 12px;
-        width: 40px;
-        height: 40px;
-        margin-right: 2px;
-        text-align: center;
-        background-repeat: repeat-x;
-        font-size: 14px;
-        border: 1px solid transparent;
-        vertical-align: middle;
-        cursor: pointer;
-        color: #fff;
-        margin-bottom: 0;    
-        font-weight: normal;
-        border-radius: 4px;
-      }
-      .memo_container {
-        height: 350px;
-        min-width: 600px;
-        // background: pink;
-        text-align: center;
-        vertical-align: middle;
-      }
-      .memo_box {
-        height: 330px;
-        margin-top: 10px;
-        min-width: 580px;
-        overflow-y: scroll;
-      }
-
-    </style>
+    <link rel="stylesheet" href=../css/style.css type="text/css">
   </head>
-  <body>
+  <body onload="init()">
     <div class="container">
       <div class="menu_container">
-        <div class="tab_container">
+        <div class="tab_container" id="tab_container">
+        <!--
           <button class="number_button button">1</button>
           <button class="number_button button">2</button>
           <button class="number_button button">3</button>
           <button class="number_button button">4</button>
+          -->
         </div>
         <div class="button_cotainer">
-          <button class="plus_button button">+</button>
-          <button class="minus_button button">-</button>
+          <button class="plus_button button" onclick="addTab()">+</button>
+          <button class="minus_button button" onclick="removeTab()">-</button>
         </div>
-        <p>
+        <p/>
       </div>
       <div class="memo_container">
         <textarea id="memo" class="memo_box" ></textarea>
       </div>
     </div>
+    
   </body>
 </html>
 
