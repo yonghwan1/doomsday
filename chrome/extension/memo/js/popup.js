@@ -16,6 +16,7 @@ function addTab(){
   btn.innerHTML = number;
   document.getElementById('tab_container').appendChild(btn);
   total_btn = total_btn + 1;
+  setTab()
 }
 
 function removeTab(){
@@ -29,6 +30,21 @@ function removeTab(){
   this.total_btn = this.total_btn - 1;
 }
 
+function setTab() {
+  chrome.storage.sync.set({
+    memo : memo_data,
+    total : this.total_btn
+  });
+}
+
+function getTab(number) {
+  chrome.storage.sync.get( function (data) {
+      var memo = document.getElementById("memo");
+      memo.value = data.memo_data;
+      this.total_btn = data.total;
+    }
+  );
+}
 
 // Textarea Event
 
@@ -41,3 +57,5 @@ function removeTab(){
 //  matching(data.userWords);
 // 
 //});
+
+
