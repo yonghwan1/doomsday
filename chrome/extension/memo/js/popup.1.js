@@ -34,6 +34,14 @@ document.querySelector('#number_4').addEventListener('click', function() {
   getPage(3);
 });
 
+
+chrome.storage.sync.get( function (data) {
+    var memo = document.querySelector("#memo");
+    memo.value = data.memo;
+    total_btn = data.total;
+    }
+);
+
 // function ==============================================
 function init() {
   getStorageData();
@@ -42,7 +50,7 @@ function init() {
 
 // clear
 function clearMemo() {
-  saveStorage("");
+  setTab("");
 }
 
 // get storage
@@ -69,13 +77,9 @@ function saveStorage(memo) {
   texts[this.select_page] = memo;
   chrome.storage.sync.set({
     memo : this.texts,
+    total : this.total_btn
   });
 }
-
-
-
-
-
 
 // document.querySelector('.plus_button').addEventListener('click', function() {
 //   createTab();

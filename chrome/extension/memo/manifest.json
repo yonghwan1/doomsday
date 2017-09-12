@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name": "MemoforMe",
+  "name": "MemoForMe",
   "version": "1.0",
   "description": "memo!!",
 
@@ -16,5 +16,5 @@
       "32": "icon/icon32.png",
       "64": "icon/icon64.png"
    },
-  "permissions": [ "activeTab", "storage" ]
+  "permissions": [ "storage" ]
 }

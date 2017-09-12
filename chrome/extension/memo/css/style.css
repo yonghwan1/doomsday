@@ -53,8 +53,14 @@
   font-weight: normal;
   border-radius: 4px;
 }
+
+.clear_button {
+  width: 80px;
+  background: red;
+}
+
 .memo_container {
-  height: 350px;
+  height: 380px;
   min-width: 600px;
   // background: pink;
   text-align: center;

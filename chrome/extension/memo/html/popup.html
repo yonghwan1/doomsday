@@ -3,24 +3,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Memo for me</title>
-    <script src="../js/popup.js"></script>
+    <!-- <script src="../js/popup.js"></script>-->
     <link rel="stylesheet" href=../css/style.css type="text/css">
   </head>
-  <!-- <body onload="init()"> -->
-  <body>
+  <body >
     <div class="container">
       <div class="menu_container">
         <div class="tab_container" id="tab_container">
-        <!--
-          <button class="number_button button">1</button>
-          <button class="number_button button">2</button>
-          <button class="number_button button">3</button>
-          <button class="number_button button">4</button>
-          -->
+          <button class="number_button button" id="number_1">1</button>
+          <button class="number_button button" id="number_2">2</button>
+          <button class="number_button button" id="number_3">3</button>
+          <button class="number_button button" id="number_4">4</button>
         </div>
         <div class="button_cotainer">
-          <button class="plus_button button" onclick="addTab()">+</button>
-          <button class="minus_button button" onclick="removeTab()">-</button>
+          <!--
+          <button class="plus_button button">+</button>
+          <button class="minus_button button">-</button>
+          -->
+          <button class="clear_button button">Clear</button>
         </div>
         <p/>
       </div>
@@ -28,7 +28,7 @@
         <textarea id="memo" class="memo_box" ></textarea>
       </div>
     </div>
-    
+  <script src="../js/popup.js"></script>
   </body>
 </html>
 
