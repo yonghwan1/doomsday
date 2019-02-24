@@ -1,0 +1,19 @@
+MST
+ - 최소 비용 신장트리
+ 
+ 그리프에서 최소비용 문제
+ - 모든 정점을 연결하는 간선들의 가중치의 합이 최소가 되는 트리
+ - 두 정점 사이의 최소 비용의 경로 찾기
+ 
+ 알고리즘
+ - Prim
+ - Kruskal
+ 
+spanning tree 
+- 모든 vertex를 포함하는 부분 집합)
+
+ 
+ Help site
+ - http://www.jungol.co.kr/bbs/board.php?bo_table=pbank&wr_id=340&sca=3020
+ - https://m.blog.naver.com/ssarang8649/220992988177
+ - https://dyndy.tistory.com/28
